@@ -1,100 +1,147 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-black text-gray-200 font-mono">
+      {/* Navigation Bar */}
+      <nav className="fixed w-full bg-black/90 border-b border-gray-800 p-4">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <div className="text-xl">[ 😮 OpenFace ]</div>
+          <div className="space-x-6">
+            <a href="#about" className="hover:text-white">
+              About
+            </a>
+            <a href="#mission" className="hover:text-white">
+              Mission
+            </a>
+            <a href="#contribute" className="hover:text-white">
+              Contribute
+            </a>
+            <a href="#contact" className="hover:text-white">
+              Contact
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 px-4 text-center">
+        <pre className="text-green-500 text-xs mb-6">
+          {` ____  ____  _____ _      _____ ____ ____ _____
+/  _ \\/  __\\/  __// \\  /|  __//   _/  __/  __/
+| | \\||  \\/||  \\  | |\\ ||  \\  |  / |  \\  |  \\
+| |_/||  __/|  /_ | | \\||  /_ |  \\_|  /_ |  /_
+\\____/\\_/   \\____\\\\_/  \\\\____\\\\____\\____\\____\\
+`}
+          {`
+
+            `}
+        </pre>
+        <h1 className="text-4xl mb-4">Open Source AI Model Hub</h1>
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          A community-driven platform for sharing, discovering, and deploying AI
+          models
+        </p>
+      </section>
+
+      {/* Mission Section */}
+      <section id="mission" className="py-16 px-4 bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl mb-8">// Mission</h2>
+          <p className="text-gray-400 mb-4">
+            We believe in democratizing AI model development and deployment.
+            OpenFace is built to be the community-driven alternative to
+            proprietary AI platforms, ensuring knowledge and resources remain
+            free and available to all.
+          </p>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl mb-8">// The Problem</h2>
+          <div className="text-gray-400 space-y-4">
+            <p>[ ] Centralized control of AI model repositories</p>
+            <p>[ ] Limited access to production-ready models</p>
+            <p>[ ] High costs of model hosting and deployment</p>
+            <p>[ ] Lack of transparency in model development</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contribute Section */}
+      <section id="contribute" className="py-16 px-4 bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl mb-8">// Contribute</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-xl">Development</h3>
+              <a
+                href="https://github.com/openface"
+                className="inline-block bg-gray-800 px-4 py-2 rounded hover:bg-gray-700"
+              >
+                GitHub Repository →
+              </a>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-xl">Support Us</h3>
+              <div className="text-gray-400">
+                <p className="mb-2">ETH: 0x...</p>
+                <p>BTC: bc1...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section id="contact" className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl mb-8">// Contact</h2>
+          <form className="space-y-4">
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full bg-gray-800 p-2 rounded border border-gray-700"
+            />
+            <textarea
+              placeholder="Message"
+              rows={4}
+              className="w-full bg-gray-800 p-2 rounded border border-gray-700"
+            />
+            <button
+              type="submit"
+              className="bg-green-600 px-6 py-2 rounded hover:bg-green-700"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-800 py-8 px-4">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="space-x-6">
+            <a
+              href="https://discord.gg/3swfECPMcr"
+              className="hover:text-white"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/openface-ai/"
+              className="hover:text-white"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://twitter.com/openface_ai"
+              className="hover:text-white"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
