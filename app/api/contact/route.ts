@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import sgMail from '@sendgrid/mail';
 
-// Define the SendGrid error response type
 interface SendGridError extends Error {
   code?: number;
   response?: {
