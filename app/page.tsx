@@ -94,9 +94,9 @@ export default function Home() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-16 px-4">
+      {/* <section id="contact" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-8">{/* Contact */} Contact</h2>
+          <h2 className="text-2xl mb-8"> Contact</h2>
           <form className="space-y-4">
             <input
               type="email"
@@ -116,7 +116,7 @@ export default function Home() {
             </button>
           </form>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="border-t border-gray-800 py-8 px-4">
