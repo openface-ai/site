@@ -45,7 +45,7 @@ export default function Home() {
       {/* Mission Section */}
       <section id="mission" className="py-16 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-8">// Mission</h2>
+          <h2 className="text-2xl mb-8">{/* Mission */} Mission</h2>
           <p className="text-gray-400 mb-4">
             We believe in democratizing AI model development and deployment.
             OpenFace is built to be the community-driven alternative to
@@ -58,7 +58,7 @@ export default function Home() {
       {/* Problem Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-8">// The Problem</h2>
+          <h2 className="text-2xl mb-8">{/* The Problem */} The Problem</h2>
           <div className="text-gray-400 space-y-4">
             <p>[ ] Centralized control of AI model repositories</p>
             <p>[ ] Limited access to production-ready models</p>
@@ -71,7 +71,7 @@ export default function Home() {
       {/* Contribute Section */}
       <section id="contribute" className="py-16 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-8">// Contribute</h2>
+          <h2 className="text-2xl mb-8">{/* Contribute */} Contribute</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <h3 className="text-xl">Development</h3>
@@ -96,7 +96,7 @@ export default function Home() {
       {/* Contact Form */}
       <section id="contact" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-8">// Contact</h2>
+          <h2 className="text-2xl mb-8">{/* Contact */} Contact</h2>
           <form className="space-y-4">
             <input
               type="email"
