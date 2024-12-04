@@ -85,8 +85,8 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-xl">Support Us</h3>
               <div className="text-gray-400">
-                <p className="mb-2">ETH: 0x...</p>
-                <p>BTC: bc1...</p>
+                <p className="mb-2">ETH: 0x418FEb7c86D88916fd932A8d5336f3030803BB95</p>
+                <p>BTC: bc1ppuc8dpkr497qh3ykze4jwfp87j3wl35k588udagzqa400rpwx54snrw2rf</p>
               </div>
             </div>
           </div>
