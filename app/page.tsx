@@ -76,7 +76,7 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-xl">Development</h3>
               <a
-                href="https://github.com/openface"
+                href="https://github.com/openface-ai"
                 className="inline-block bg-gray-800 px-4 py-2 rounded hover:bg-gray-700"
               >
                 GitHub Repository →
