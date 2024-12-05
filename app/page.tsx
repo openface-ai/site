@@ -1,8 +1,43 @@
-"use client";
-import { useState } from "react";
+
+'use client';
+import { useState } from 'react';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, message }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || data.details || 'Failed to send message');
+      }
+
+      setStatus('success');
+      setEmail('');
+      setMessage('');
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+      console.error('Contact form error:', error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black text-gray-200 font-mono">
@@ -148,29 +183,44 @@ export default function Home() {
       </section>
 
       {/* Contact Form */}
-      {/* <section id="contact" className="py-16 px-4">
+      <section id="contact" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl mb-8">Contact</h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
               className="w-full bg-gray-800 p-2 rounded border border-gray-700"
             />
             <textarea
               placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
               rows={4}
               className="w-full bg-gray-800 p-2 rounded border border-gray-700"
             />
             <button
               type="submit"
-              className="bg-green-600 px-6 py-2 rounded hover:bg-green-700"
+              disabled={status === 'sending'}
+              className="bg-green-600 px-6 py-2 rounded hover:bg-green-700 disabled:opacity-50"
             >
-              Send Message
+              {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
+            {status === 'success' && (
+              <p className="text-green-500">Message sent successfully!</p>
+            )}
+            {status === 'error' && (
+              <p className="text-red-500">
+                {errorMessage || 'Failed to send message. Please try again.'}
+              </p>
+            )}
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-gray-800 py-6 md:py-8 px-4">
