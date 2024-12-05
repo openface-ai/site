@@ -42,9 +42,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 text-center">
-        <pre className="text-green-500 text-xs mb-6">
-          {`
-____ ______   ____   _____/ ____\\____    ____  ____
+        <pre className="text-green-500 text-xs mb-6 whitespace-pre">
+          {`____ ______   ____   _____/ ____\\____    ____  ____
 /  _ \\\\____ \\_/ __ \\/    \\   __\\ / __ \\ _/ ___\\/ __ \\
 (  <_> )  |_> >  ___/|   |  \\  |  / __ \\ \\  \\__\\  ___/
 \\____/|   __/ \\___  >___|  /__|  (____  /\\___  >___  >
