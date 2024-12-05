@@ -1,24 +1,26 @@
-
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
+import AuthButton from "./components/AuthButton";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
-    setErrorMessage('');
+    setStatus("sending");
+    setErrorMessage("");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, message }),
       });
@@ -26,16 +28,18 @@ export default function Home() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || data.details || 'Failed to send message');
+        throw new Error(data.error || data.details || "Failed to send message");
       }
 
-      setStatus('success');
-      setEmail('');
-      setMessage('');
+      setStatus("success");
+      setEmail("");
+      setMessage("");
     } catch (error) {
-      setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
-      console.error('Contact form error:', error);
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "An unexpected error occurred",
+      );
+      console.error("Contact form error:", error);
     }
   };
 
@@ -47,30 +51,52 @@ export default function Home() {
           <div className="text-lg md:text-xl">[ 😮 OpenFace ]</div>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#mission" className="hover:text-white transition-colors">Mission</a>
-            <a href="#contribute" className="hover:text-white transition-colors">Contribute</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a href="#about" className="hover:text-white transition-colors">
+              About
+            </a>
+            <a href="#mission" className="hover:text-white transition-colors">
+              Mission
+            </a>
+            <a
+              href="#contribute"
+              className="hover:text-white transition-colors"
+            >
+              Contribute
+            </a>
+            <a href="#contact" className="hover:text-white transition-colors">
+              Contact
+            </a>
+            <AuthButton />
           </div>
           {/* Mobile Menu Button */}
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden hover:text-white focus:outline-none"
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={
+                  isMobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
         </div>
 
         {/* Mobile Menu Dropdown */}
-        <div className={`
+        <div
+          className={`
           md:hidden 
           absolute 
           top-full 
@@ -82,13 +108,27 @@ export default function Home() {
           transform
           transition-all
           duration-300
-          ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}
-        `}>
+          ${isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+        `}
+        >
           <div className="flex flex-col p-4 space-y-4">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#mission" className="hover:text-white transition-colors">Mission</a>
-            <a href="#contribute" className="hover:text-white transition-colors">Contribute</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a href="#about" className="hover:text-white transition-colors">
+              About
+            </a>
+            <a href="#mission" className="hover:text-white transition-colors">
+              Mission
+            </a>
+            <a
+              href="#contribute"
+              className="hover:text-white transition-colors"
+            >
+              Contribute
+            </a>
+            <a href="#contact" className="hover:text-white transition-colors">
+              Contact
+            </a>
+
+            <AuthButton />
           </div>
           <div className="md:hidden">
             <button className="hover:text-white focus:outline-none">
@@ -123,7 +163,8 @@ export default function Home() {
         </pre>
         <h1 className="text-2xl md:text-4xl mb-4">Open Source AI Model Hub</h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-          A community-driven platform for sharing, discovering, and deploying AI models
+          A community-driven platform for sharing, discovering, and deploying AI
+          models
         </p>
       </section>
 
@@ -174,7 +215,8 @@ export default function Home() {
                   ETH: 0x418FEb7c86D88916fd932A8d5336f3030803BB95
                 </p>
                 <p className="text-xs md:text-sm break-all">
-                  BTC: bc1ppuc8dpkr497qh3ykze4jwfp87j3wl35k588udagzqa400rpwx54snrw2rf
+                  BTC:
+                  bc1ppuc8dpkr497qh3ykze4jwfp87j3wl35k588udagzqa400rpwx54snrw2rf
                 </p>
               </div>
             </div>
@@ -205,17 +247,17 @@ export default function Home() {
             />
             <button
               type="submit"
-              disabled={status === 'sending'}
+              disabled={status === "sending"}
               className="bg-green-600 px-6 py-2 rounded hover:bg-green-700 disabled:opacity-50"
             >
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
+              {status === "sending" ? "Sending..." : "Send Message"}
             </button>
-            {status === 'success' && (
+            {status === "success" && (
               <p className="text-green-500">Message sent successfully!</p>
             )}
-            {status === 'error' && (
+            {status === "error" && (
               <p className="text-red-500">
-                {errorMessage || 'Failed to send message. Please try again.'}
+                {errorMessage || "Failed to send message. Please try again."}
               </p>
             )}
           </form>
@@ -226,13 +268,27 @@ export default function Home() {
       <footer className="border-t border-gray-800 py-6 md:py-8 px-4">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-4">
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 items-center">
-            <a href="https://discord.gg/3swfECPMcr" className="hover:text-white">Discord</a>
-            <a href="https://github.com/openface-ai/" className="hover:text-white">GitHub</a>
-            <a href="https://twitter.com/openface_ai" className="hover:text-white">Twitter</a>
+            <a
+              href="https://discord.gg/3swfECPMcr"
+              className="hover:text-white"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/openface-ai/"
+              className="hover:text-white"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://twitter.com/openface_ai"
+              className="hover:text-white"
+            >
+              Twitter
+            </a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-
