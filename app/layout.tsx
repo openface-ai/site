@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -34,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} font-mono`}>{children}</body>
+      <UserProvider>
+        <body className={`${ibmPlexMono.variable} font-mono`}>{children}</body>
+      </UserProvider>
     </html>
   );
 }
