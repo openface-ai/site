@@ -122,7 +122,6 @@ export default function Home() {
       <section id="contribute" className="py-16 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl mb-8">Contribute</h2>
-          <h2 className="text-2xl mb-8">Contribute</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <h3 className="text-xl">Development</h3>
