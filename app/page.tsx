@@ -55,6 +55,24 @@ export default function Home() {
             <a href="#contribute" className="hover:text-white transition-colors">Contribute</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
+          <div className="md:hidden">
+            <button className="hover:text-white focus:outline-none">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -103,6 +121,7 @@ export default function Home() {
       {/* Contribute Section */}
       <section id="contribute" className="py-16 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl mb-8">Contribute</h2>
           <h2 className="text-2xl mb-8">Contribute</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -167,3 +186,4 @@ export default function Home() {
     </div>
   );
 }
+
