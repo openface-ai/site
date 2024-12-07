@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [message, setMessage] = useState('');
   // const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   // const [errorMessage, setErrorMessage] = useState('');
 
