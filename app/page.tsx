@@ -176,6 +176,10 @@ export default function Home() {
                 <p className="text-xs md:text-sm break-all">
                   BTC: bc1ppuc8dpkr497qh3ykze4jwfp87j3wl35k588udagzqa400rpwx54snrw2rf
                 </p>
+                <p className="text-xs md:text-sm break-all">
+                  SOL: CT1pjTC4CjNNroHtptjBL5Hxr2BEfTaW1Bg65ZNNUwe9
+                </p>
+                
               </div>
             </div>
           </div>
@@ -183,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-16 px-4">
+      {/* <section id="contact" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl mb-8">Contact</h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -220,7 +224,7 @@ export default function Home() {
             )}
           </form>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="border-t border-gray-800 py-6 md:py-8 px-4">
