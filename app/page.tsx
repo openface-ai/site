@@ -6,38 +6,38 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  // const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  // const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-    setErrorMessage('');
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setStatus('sending');
+  //   setErrorMessage('');
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, message }),
-      });
+  //   try {
+  //     const response = await fetch('/api/contact', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ email, message }),
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || data.details || 'Failed to send message');
-      }
+  //     if (!response.ok) {
+  //       throw new Error(data.error || data.details || 'Failed to send message');
+  //     }
 
-      setStatus('success');
-      setEmail('');
-      setMessage('');
-    } catch (error) {
-      setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
-      console.error('Contact form error:', error);
-    }
-  };
+  //     setStatus('success');
+  //     setEmail('');
+  //     setMessage('');
+  //   } catch (error) {
+  //     setStatus('error');
+  //     setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+  //     console.error('Contact form error:', error);
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-black text-gray-200 font-mono">
