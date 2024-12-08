@@ -1,6 +1,7 @@
 
 'use client';
 import { useState } from 'react';
+import Button from './ui/Button';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -112,27 +113,34 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-28 md:pt-24 px-4 text-center">
-        <pre className="text-green-500 text-[0.6rem] md:text-xs mb-6 whitespace-pre overflow-x-auto">
-          {`____ ______   ____   _____/ ____\\____    ____  ____
-/  _ \\\\____ \\_/ __ \\/    \\   __\\ / __ \\ _/ ___\\/ __ \\
-(  <_> )  |_> >  ___/|   |  \\  |  / __ \\ \\  \\__\\  ___/
-\\____/|   __/ \\___  >___|  /__|  (____  /\\___  >___  >
-    |__|        \\/     \\/           \\/     \\/    \\/
-`}
-        </pre>
-        <h1 className="text-2xl md:text-4xl mb-4">Open Source AI Model Hub</h1>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-          A community-driven platform for sharing, discovering, and deploying AI models
+      <section className="relative pt-28 md:pt-32 px-4 text-center min-h-[60vh] flex flex-col items-center justify-center">  
+      <div className="relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+          <span className="text-6xl md:text-8xl">😮</span>
+          <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
+            Open Source AI Hub
+          </h1>
+        </div>
+        
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-8">
+          Discover, share, and deploy AI models & datasets in a community-driven ecosystem
         </p>
-      </section>
+        <div className="flex flex-col md:flex-row justify-center gap-4">
+          {/* <Button size="lg">Explore Models</Button> */}
+          <a href="https://discord.gg/3swfECPMcr">
+  <Button variant="outline" size="lg">Join Community</Button>
+</a>
+
+        </div>
+      </div>
+    </section>
 
       {/* Mission Section */}
       <section id="mission" className="py-16 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl mb-8">Mission</h2>
           <p className="text-gray-400 mb-4 text-sm md:text-base">
-            We believe in democratizing AI model development and deployment.
+            We believe in democratizing AI.
             OpenFace is built to be the community-driven alternative to
             proprietary AI platforms, ensuring knowledge and resources remain
             free and available to all.
@@ -140,18 +148,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-8">The Problem</h2>
-          <div className="text-gray-400 space-y-4 text-sm md:text-base">
-            <p>Centralized control of AI model repositories</p>
-            <p>Limited access to production-ready models</p>
-            <p>High costs of model hosting and deployment</p>
-            <p>Lack of transparency in model development</p>
-          </div>
-        </div>
-      </section>
 
       {/* Contribute Section */}
       <section id="contribute" className="py-16 px-4 bg-gray-900">
